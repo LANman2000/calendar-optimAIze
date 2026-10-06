@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CAL — Your Calendar Assistant</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: left;
+            font-size: 24px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .center-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: "Courier New", monospace;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #00cc00;
+        }
+
+        pre {
+            background: #0a0a0a;
+            padding: 20px;
+            border-radius: 8px;
+            color: #00ff00;
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Hi, I am <strong>CAL</strong>.<br>
+    I already see your calendar and your schedule for the next 7 days.<br>
+    Tell me what you want to change and I’ll give you recommendations.
+</h1>
+
+<div class="center-container">
+    <form action="/run">
+        <button type="submit">Run Weekly Optimization</button>
+    </form>
+</div>
+
+{% if output %}
+    <h2>AI Recommendations</h2>
+    <pre>{{ output }}</pre>
+{% endif %}
+
+</body>
+</html>
